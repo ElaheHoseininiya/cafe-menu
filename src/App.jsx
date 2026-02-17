@@ -1,5 +1,5 @@
 import { useEffect, useState } from 'react'
-import { BrowserRouter as Router, Routes, Route, Navigate } from 'react-router-dom'
+import { Routes, Route, Navigate } from 'react-router-dom'
 import AdminPage from './pages/AdminPage'
 import MenuPage from './pages/MenuPage'
 import LoginPage from './pages/LoginPage'
@@ -27,16 +27,14 @@ function App() {
   if (loading) return <p>در حال بررسی ورود ادمین...</p>
 
   return (
-    <Router>
-      <Routes>
-        <Route path="/" element={<MenuPage />} />
-        <Route path="/login" element={<LoginPage />} />
-        <Route
-          path="/admin"
-          element={user ? <AdminPage /> : <Navigate to="/login" replace />}
-        />
-      </Routes>
-    </Router>
+    <Routes>
+      <Route path="/" element={<MenuPage />} />
+      <Route path="/login" element={<LoginPage />} />
+      <Route
+        path="/admin"
+        element={user ? <AdminPage /> : <Navigate to="/login" replace />}
+      />
+    </Routes>
   )
 }
 
