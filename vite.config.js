@@ -2,7 +2,7 @@ import { defineConfig } from 'vite'
 import react from '@vitejs/plugin-react'
 
 export default defineConfig({
-  base: "/cafe-menu/",
   plugins: [react()],
+  base: '/cafe-menu/',   // 👈 اسم دقیق ریپو
 })
 

@@ -1,8 +1,8 @@
 import { useEffect, useState } from 'react'
 import { Routes, Route, Navigate } from 'react-router-dom'
-import AdminPage from './pages/AdminPage'
-import MenuPage from './pages/MenuPage'
-import LoginPage from './pages/LoginPage'
+import AdminPage from './pages/AdminPage.jsx'
+import MenuPage from './pages/MenuPage.jsx'
+import LoginPage from './pages/LoginPage.jsx'
 import { supabase } from './supabaseClient'
 
 function App() {
@@ -15,11 +15,14 @@ function App() {
       setUser(data.session?.user || null)
       setLoading(false)
     }
+
     getSession()
 
-    const { data: listener } = supabase.auth.onAuthStateChange((_event, session) => {
-      setUser(session?.user || null)
-    })
+    const { data: listener } = supabase.auth.onAuthStateChange(
+      (_event, session) => {
+        setUser(session?.user || null)
+      }
+    )
 
     return () => listener.subscription.unsubscribe()
   }, [])
