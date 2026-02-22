@@ -1,3 +1,27 @@
+// function App() {
+//   return (
+//     <div className="bg-red-500 text-white p-10 text-3xl">
+//       Tailwind Works 🔥
+//     </div>
+//   )
+// }
+
+// export default App
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 import { useEffect, useState } from 'react'
 import { Routes, Route, Navigate } from 'react-router-dom'
 import AdminPage from './pages/AdminPage.jsx'
